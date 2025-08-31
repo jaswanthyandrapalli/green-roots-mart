@@ -126,10 +126,6 @@ All colors use HSL format for the organic/sustainable theme.
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
     @apply bg-background text-foreground font-sans antialiased;
   }

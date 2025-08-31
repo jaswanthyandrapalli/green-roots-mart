@@ -18,9 +18,9 @@ const ProductDetail = () => {
     price: 4.99,
     image: '🍅',
     category: 'vegetables',
-    seller: { 
-      name: 'Green Valley Farm', 
-      type: 'farmer' as const, 
+    seller: {
+      name: 'Green Valley Farm',
+      type: 'farmer',
       location: 'California',
       established: '2015',
       certifications: ['USDA Organic', 'Non-GMO']
@@ -40,7 +40,7 @@ const ProductDetail = () => {
     origin: 'Grown in Sonoma County, California using sustainable farming practices.',
   };
 
-  const handleQuantityChange = (change: number) => {
+  const handleQuantityChange = (change) => {
     setQuantity(Math.max(1, quantity + change));
   };
 
