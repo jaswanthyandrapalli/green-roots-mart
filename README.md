@@ -1,73 +1,116 @@
-# Welcome to your Lovable project
+# 🌱 Green Roots Mart  
+🛒 Decentralized E-Commerce Platform for Farmers, Organic Stores & Consumers  
+A comprehensive solution for connecting farmers, digitizing offline organic stores, and delivering authentic organic products to consumers.
 
-## Project info
+License: MIT
 
-**URL**: https://lovable.dev/projects/d081f9ac-83ec-4676-afc0-dfe58d625244
+---
 
-## How can I edit this code?
+## 📖 Overview
+Green Roots Mart is a **unified e-commerce platform** designed to build a transparent and sustainable organic supply chain.  
+It provides a marketplace where **farmers can sell directly**, **offline organic stores gain digital visibility**, and **consumers access fresh, affordable, and authentic organic products**.  
 
-There are several ways of editing your application.
+By eliminating intermediaries, integrating digital payments, and supporting logistics, Green Roots Mart enhances **fair pricing, accessibility, and trust** in the organic ecosystem.
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d081f9ac-83ec-4676-afc0-dfe58d625244) and start prompting.
+## 🎯 Vision
+Our vision is to create a **fair and transparent ecosystem** for the organic market that:
 
-Changes made via Lovable will be committed automatically to this repo.
+- 🌾 **Empowers Farmers**: Ensures fair trade by removing middlemen.  
+- 🏬 **Supports Local Stores**: Provides digital growth for offline organic sellers.  
+- 🛒 **Benefits Consumers**: Makes organic products affordable and accessible.  
+- 🌍 **Drives Sustainability**: Builds a reliable, transparent, and eco-friendly supply chain.  
+- 📈 **Fuels Growth**: Strengthens the overall organic and sustainable market.  
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## ✨ Key Features
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 👨‍🌾 Farmers
+- Direct selling without middlemen  
+- Fair income with transparent pricing  
+- Simple onboarding & product management  
 
-Follow these steps:
+### 🏬 Offline Stores
+- Online presence without building websites  
+- Digital catalog & product uploads  
+- Order and delivery management  
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 🛒 Consumers
+- Fresh, affordable organic products  
+- Easy browsing & filtering options  
+- Digital payments & secure checkout  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### ⚙️ Platform Features
+- 🔐 **Secure Authentication** → Login/Signup with JWT  
+- 🛍️ **Shopping Cart & Checkout** → Smooth order flow  
+- 📦 **Order Tracking** → Real-time order status  
+- 📊 **Seller Dashboard** → Track sales & manage products  
+- 💳 **Integrated Payments** → Digital transactions for trust & convenience  
+- 📡 **Logistics Support** → Reliable and efficient delivery  
 
-# Step 3: Install the necessary dependencies.
-npm i
+---
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## 🛠️ Tech Stack
 
-**Edit a file directly in GitHub**
+- **Frontend:** React.js, Tailwind CSS, Redux Toolkit, React Router  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB  
+- **Authentication:** JWT (JSON Web Tokens)  
+- **Deployment:** Vercel / Netlify (frontend), Render / Heroku (backend)  
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+## 🗺️ Roadmap
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Phase 1: Core Platform
+- Farmer onboarding & product listings  
+- Consumer ordering & checkout system  
+- Offline store digitization  
 
-## What technologies are used for this project?
+### Phase 2: Advanced Features
+- Order tracking & delivery integration  
+- Payment gateway integration  
+- Rating & review system  
 
-This project is built with:
+### Phase 3: Growth & Community
+- Subscription model for frequent buyers  
+- Loyalty & reward programs  
+- Marketplace analytics for sellers  
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Phase 4: Ecosystem Expansion
+- Integration with logistics partners  
+- AI-powered recommendations  
+- Multi-language & multi-currency support  
 
-## How can I deploy this project?
+### Phase 5: Long-Term Vision
+- Cross-border organic marketplace  
+- Partnerships with organic certifiers  
+- Blockchain-based supply chain verification  
 
-Simply open [Lovable](https://lovable.dev/projects/d081f9ac-83ec-4676-afc0-dfe58d625244) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 🚀 Getting Started
 
-Yes, you can!
+### Prerequisites
+Before starting, ensure you have installed:
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- Node.js & npm  
+- Git & GitHub account  
+- MongoDB (local or cloud)  
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Installation & Setup
+
+```bash
+# Clone the repository
+git clone <repository-url>
+
+# Navigate to project directory
+cd green-roots-mart
+
+# Install dependencies
+npm install
+
+# Start development server
+npm start
