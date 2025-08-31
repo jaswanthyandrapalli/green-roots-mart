@@ -13,7 +13,7 @@ const Home = () => {
       <section className="py-16 bg-primary text-primary-foreground">
         <div className="container mx-auto px-4 text-center">
           <h2 className="font-display text-3xl md:text-4xl font-bold mb-8 animate-slide-up">
-            Why Choose Green Roots?
+            Why Choose D-Root organics?
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">

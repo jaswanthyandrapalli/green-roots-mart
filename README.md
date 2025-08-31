@@ -1,4 +1,4 @@
-# 🌱 Green Roots Mart  
+# 🌱 D-Roots Organics 
 🛒 Decentralized E-Commerce Platform for Farmers, Organic Stores & Consumers  
 A comprehensive solution for connecting farmers, digitizing offline organic stores, and delivering authentic organic products to consumers.
 

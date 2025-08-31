@@ -90,7 +90,7 @@ const Contact = () => {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="font-medium mb-1">Green Roots HQ</p>
+                  <p className="font-medium mb-1">D-Root  HQ</p>
                   <p className="text-muted-foreground">
                     123 Sustainable Street<br />
                     Organic Valley, CA 94102<br />

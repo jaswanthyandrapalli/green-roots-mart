@@ -28,9 +28,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2 font-display font-bold text-xl text-primary hover:opacity-80 transition-opacity">
             <div className="w-8 h-8 hero-gradient rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground text-sm font-bold">GR</span>
+              <span className="text-primary-foreground text-sm font-bold">DR</span>
             </div>
-            <span>Green Roots</span>
+            <span>D-Root Organics</span>
           </Link>
 
           {/* Desktop Navigation */}

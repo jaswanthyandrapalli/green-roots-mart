@@ -10,9 +10,9 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2 font-display font-bold text-xl">
               <div className="w-8 h-8 bg-primary-foreground/20 rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground text-sm font-bold">GR</span>
+                <span className="text-primary-foreground text-sm font-bold">DR</span>
               </div>
-              <span>Green Roots</span>
+              <span>D-root Organics</span>
             </div>
             <p className="text-primary-foreground/80 text-sm">
               Connecting communities with fresh, sustainable, and locally-sourced organic produce.
@@ -90,7 +90,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-6 text-center text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Green Roots Mart. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} D-Root Organics. All rights reserved.</p>
         </div>
       </div>
     </footer>

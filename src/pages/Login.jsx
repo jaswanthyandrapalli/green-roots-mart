@@ -41,9 +41,9 @@ const Login = () => {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center space-x-2 font-display font-bold text-2xl text-primary mb-4">
             <div className="w-10 h-10 hero-gradient rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground text-lg font-bold">GR</span>
+              <span className="text-primary-foreground text-lg font-bold">DR</span>
             </div>
-            <span>Green Roots</span>
+            <span>D-Root Organics</span>
           </div>
           <h1 className="text-2xl font-bold text-primary">Welcome Back</h1>
           <p className="text-muted-foreground mt-2">
