@@ -124,7 +124,6 @@ const Products = () => {
                 <SelectValue placeholder="All Categories" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Categories</SelectItem>
                 <SelectItem value="fruits">Fruits</SelectItem>
                 <SelectItem value="vegetables">Vegetables</SelectItem>
                 <SelectItem value="grains">Grains</SelectItem>
@@ -138,7 +137,6 @@ const Products = () => {
                 <SelectValue placeholder="All Sellers" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">All Sellers</SelectItem>
                 <SelectItem value="farmer">Farmers</SelectItem>
                 <SelectItem value="store">Stores</SelectItem>
               </SelectContent>
