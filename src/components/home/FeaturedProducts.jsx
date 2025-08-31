@@ -2,7 +2,11 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { useNavigate } from 'react-router-dom';
-import { FiStar, FiShoppingCart } from 'react-icons/fi';
+import { FiStar, FiShoppingCart, FiHeart } from 'react-icons/fi';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '@/store/slices/cartSlice';
+import { useToast } from '@/hooks/use-toast';
+import { useState } from 'react';
 
 // Mock featured products
 const featuredProducts = [
@@ -11,7 +15,7 @@ const featuredProducts = [
     name: 'Organic Heirloom Tomatoes',
     price: 4.99,
     image: '🍅',
-    seller: { name: 'Green Valley Farm', type: 'farmer' as const },
+    seller: { name: 'Green Valley Farm', type: 'farmer'},
     rating: 4.8,
     reviews: 156,
     unit: 'per lb',
@@ -21,7 +25,7 @@ const featuredProducts = [
     name: 'Fresh Spinach Bundle',
     price: 3.49,
     image: '🥬',
-    seller: { name: 'Organic Harvest Store', type: 'store' as const },
+    seller: { name: 'Organic Harvest Store', type: 'store' },
     rating: 4.9,
     reviews: 89,
     unit: 'per bunch',
@@ -31,7 +35,7 @@ const featuredProducts = [
     name: 'Quinoa Ancient Grain',
     price: 8.99,
     image: '🌾',
-    seller: { name: 'Grain Masters Co.', type: 'store' as const },
+    seller: { name: 'Grain Masters Co.', type: 'store' },
     rating: 4.7,
     reviews: 234,
     unit: 'per 2lb bag',
@@ -41,7 +45,7 @@ const featuredProducts = [
     name: 'Organic Honey',
     price: 12.99,
     image: '🍯',
-    seller: { name: 'Bee Happy Apiary', type: 'farmer' as const },
+    seller: { name: 'Bee Happy Apiary', type: 'farmer' },
     rating: 5.0,
     reviews: 67,
     unit: 'per 16oz jar',
@@ -50,6 +54,59 @@ const featuredProducts = [
 
 const FeaturedProducts = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { toast } = useToast();
+  const [wishlist, setWishlist] = useState(new Set());
+  const [loadingStates, setLoadingStates] = useState(new Set());
+
+  const handleAddToCart = (e, product) => {
+    e.stopPropagation();
+    setLoadingStates(prev => new Set(prev).add(product.id));
+
+    // Simulate API call delay
+    setTimeout(() => {
+      dispatch(addToCart({
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        seller: product.seller,
+        unit: product.unit,
+      }));
+
+      setLoadingStates(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(product.id);
+        return newSet;
+      });
+
+      toast({
+        title: "Added to cart!",
+        description: `${product.name} has been added to your cart.`,
+      });
+    }, 500);
+  };
+
+  const toggleWishlist = (e, productId) => {
+    e.stopPropagation();
+    setWishlist(prev => {
+      const newWishlist = new Set(prev);
+      if (newWishlist.has(productId)) {
+        newWishlist.delete(productId);
+        toast({
+          title: "Removed from wishlist",
+          description: "Product removed from your wishlist.",
+        });
+      } else {
+        newWishlist.add(productId);
+        toast({
+          title: "Added to wishlist!",
+          description: "Product added to your wishlist.",
+        });
+      }
+      return newWishlist;
+    });
+  };
 
   return (
     <section className="py-16">
@@ -103,17 +160,29 @@ const FeaturedProducts = () => {
                       <span className="font-bold text-lg text-primary">${product.price}</span>
                       <span className="text-sm text-muted-foreground ml-1">{product.unit}</span>
                     </div>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="text-primary hover:text-primary/80 hover:bg-primary/5 p-2"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        // Add to cart logic would go here
-                      }}
-                    >
-                      <FiShoppingCart size={16} />
-                    </Button>
+                    <div className="flex gap-2">
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        className={`p-2 ${wishlist.has(product.id) ? 'text-red-500' : 'text-muted-foreground hover:text-red-500'}`}
+                        onClick={(e) => toggleWishlist(e, product.id)}
+                      >
+                        <FiHeart size={16} className={wishlist.has(product.id) ? 'fill-current' : ''} />
+                      </Button>
+                      <Button
+                        size="sm"
+                        variant="ghost"
+                        className="text-primary hover:text-primary/80 hover:bg-primary/5 p-2"
+                        onClick={(e) => handleAddToCart(e, product)}
+                        disabled={loadingStates.has(product.id)}
+                      >
+                        {loadingStates.has(product.id) ? (
+                          <div className="animate-spin rounded-full h-4 w-4 border-2 border-primary border-t-transparent" />
+                        ) : (
+                          <FiShoppingCart size={16} />
+                        )}
+                      </Button>
+                    </div>
                   </div>
                 </div>
               </CardContent>
