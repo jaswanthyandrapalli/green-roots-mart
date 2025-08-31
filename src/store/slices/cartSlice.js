@@ -1,22 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-export interface CartItem {
-  id: string;
-  name: string;
-  price: number;
-  quantity: number;
-  image: string;
-  seller: string;
-  unit: string;
-}
-
-interface CartState {
-  items: CartItem[];
-  total: number;
-  itemCount: number;
-}
-
-const initialState: CartState = {
+const initialState = {
   items: [],
   total: 0,
   itemCount: 0,
@@ -26,7 +10,7 @@ const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addToCart: (state, action: PayloadAction<Omit<CartItem, 'quantity'> & { quantity?: number }>) => {
+    addToCart: (state, action) => {
       const { quantity = 1, ...item } = action.payload;
       const existingItem = state.items.find(i => i.id === item.id);
       
@@ -38,11 +22,11 @@ const cartSlice = createSlice({
       
       cartSlice.caseReducers.updateTotals(state);
     },
-    removeFromCart: (state, action: PayloadAction<string>) => {
+    removeFromCart: (state, action) => {
       state.items = state.items.filter(item => item.id !== action.payload);
       cartSlice.caseReducers.updateTotals(state);
     },
-    updateQuantity: (state, action: PayloadAction<{ id: string; quantity: number }>) => {
+    updateQuantity: (state, action) => {
       const item = state.items.find(i => i.id === action.payload.id);
       if (item) {
         item.quantity = action.payload.quantity;

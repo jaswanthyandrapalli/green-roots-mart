@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '@/store/store';
 import { updateQuantity, removeFromCart } from '@/store/slices/cartSlice';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -11,14 +10,14 @@ import { useNavigate } from 'react-router-dom';
 const Cart = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { items, total, itemCount } = useSelector((state: RootState) => state.cart);
+  const { items, total, itemCount } = useSelector((state) => state.cart);
   const [promoCode, setPromoCode] = useState('');
 
-  const handleQuantityUpdate = (id: string, quantity: number) => {
+  const handleQuantityUpdate = (id, quantity) => {
     dispatch(updateQuantity({ id, quantity }));
   };
 
-  const handleRemoveItem = (id: string) => {
+  const handleRemoveItem = (id) => {
     dispatch(removeFromCart(id));
   };
 

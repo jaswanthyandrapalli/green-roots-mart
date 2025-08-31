@@ -1,36 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-export interface Product {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-  description: string;
-  category: 'fruits' | 'vegetables' | 'grains' | 'organic-products';
-  seller: {
-    id: string;
-    name: string;
-    type: 'farmer' | 'store';
-    location: string;
-  };
-  unit: string;
-  inStock: boolean;
-  rating: number;
-  reviews: number;
-}
-
-interface ProductsState {
-  items: Product[];
-  loading: boolean;
-  filteredItems: Product[];
-  filters: {
-    category: string;
-    priceRange: [number, number];
-    sellerType: string;
-  };
-}
-
-const initialState: ProductsState = {
+const initialState = {
   items: [],
   loading: false,
   filteredItems: [],
@@ -45,14 +15,14 @@ const productsSlice = createSlice({
   name: 'products',
   initialState,
   reducers: {
-    setProducts: (state, action: PayloadAction<Product[]>) => {
+    setProducts: (state, action) => {
       state.items = action.payload;
       state.filteredItems = action.payload;
     },
-    setLoading: (state, action: PayloadAction<boolean>) => {
+    setLoading: (state, action) => {
       state.loading = action.payload;
     },
-    setFilters: (state, action: PayloadAction<Partial<ProductsState['filters']>>) => {
+    setFilters: (state, action) => {
       state.filters = { ...state.filters, ...action.payload };
       
       // Apply filters
